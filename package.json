@@ -1,9 +1,6 @@
 {
-  "name": "@base-ui-t1/components",
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com/YOUR_REPOSITORY_NAME"
-  },
-  "version": "1.0.0",
+  "name": "@t1rearc-ui-base/components",
+  "version": "0.0.1",
   "description": "Base UI component for T1 project",
   "scripts": {
     "build-dev": "./node_modules/.bin/rimraf dist/ && cross-env NODE_ENV=development rollup -c",
