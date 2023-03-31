@@ -3,6 +3,7 @@ Required:
 
 `Node.js >= v16`
 
+`yarn >= v1.22`
 # Setup
 ## Mode `development`
 - Copy `.env.example` file to `.env.development`
@@ -12,16 +13,16 @@ Required:
 - Copy `APP_ENVIRONMENT=production` into the `.env.production` file
 ## Install dependencies
 ```shell
-npm install
+yarn install
 ```
 ## Build
 - For development or local mode:
 ```
-npm run build-dev
+yarn run build-dev
 ```
 - For development or local mode:
 ```
-npm run build-prod
+yarn run build-prod
 ```
 The output directory is `dist/` will be bundled on your root directory.
 

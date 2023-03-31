@@ -3,7 +3,6 @@ import commonjs from '@rollup/plugin-commonjs';
 import typescript from '@rollup/plugin-typescript';
 import postcss from 'rollup-plugin-postcss';
 import dts from 'rollup-plugin-dts';
-import dotenv from 'dotenv';
 import alias from '@rollup/plugin-alias';
 import svgr from '@svgr/rollup'
 import babel from '@rollup/plugin-babel';
@@ -14,11 +13,11 @@ import replace from '@rollup/plugin-replace';
 
 const packageJson = JSON.parse(readFileSync('./package.json', {encoding: 'utf8'}));
 
-const config = dotenv.config({
-  path: `.env.${process.env.NODE_ENV}`,
-});
+// const config = dotenv.config({
+//   path: `.env.${process.env.NODE_ENV}`,
+// });
 
-const isProduction = config.parsed.APP_ENVIRONMENT === 'production';
+const isProduction = process.env.NODE_ENV === 'production';
 
 export default [
   {
