@@ -33,7 +33,6 @@
         @content;
     }
 }
-
 @mixin xs {
     @media screen and (min-width: #{$xs-width}) {
         @content;
