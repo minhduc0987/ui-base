@@ -1,0 +1,73 @@
+$checkbox-border-color: #011e41;
+$checkbox-tick-color: #fff;
+$checkbox-label-color: #011e41;
+
+.Checkbox {
+    $root: &;
+    position: relative;
+
+    & + & {
+        margin-top: 5px;
+    }
+
+    &__input {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        border: 0;
+        margin: -1px;
+        padding: 0;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+
+        &:checked ~ #{$root}__icon {
+            background-color: $checkbox-border-color;
+
+            &::before {
+                display: block;
+            }
+        }
+
+        &:disabled ~ #{$root}__icon,
+        &:disabled ~ #{$root}__label {
+            opacity: 0.5;
+            cursor: default;
+        }
+    }
+
+    &__icon {
+        box-sizing: border-box;
+        position: absolute;
+        top: 50%;
+        left: 0;
+        width: 16px;
+        height: 16px;
+        border-radius: 2px;
+        background-color: transparent;
+        border: 2px solid $checkbox-border-color;
+        overflow: hidden;
+        transform: translateY(-50%);
+
+        &::before {
+            display: none;
+            content: '';
+            height: 8px;
+            width: 4px;
+            border-bottom: 1px solid $checkbox-tick-color;
+            border-right: 1px solid $checkbox-tick-color;
+            transform: rotate(45deg) translate(3px, -3px);
+        }
+    }
+
+    &__label {
+        color: $checkbox-label-color;
+        margin-bottom: unset;
+        padding-left: 20px;
+        cursor: pointer;
+    }
+
+    &--inline {
+        display: inline-block;
+        margin-right: 15px;
+    }
+}
