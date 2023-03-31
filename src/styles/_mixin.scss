@@ -1,0 +1,46 @@
+@mixin fs($value) {
+	@if isNotEmpty($value) {
+		font-size: calc(strip-unit($value) / strip-unit($body-font-size)) + rem;
+		@include md {
+			font-size: calc(strip-unit($value) / strip-unit($body-font-size-md)) + rem;
+		}
+	}
+}
+
+@mixin text-bold {
+	font-weight: bold;
+}
+
+@mixin text-semibold {
+	font-weight: 600;
+}
+
+@mixin convert-shorthand($property, $shorthand) {
+	@if isNotEmpty($shorthand) {
+		$important: if(list.length($shorthand) == 5, list.nth($shorthand, 5), null);
+		@if (length($shorthand) >= 4) {
+			@include generic-shorthand(
+				$property,
+				nth($shorthand, 1),
+				nth($shorthand, 2),
+				nth($shorthand, 3),
+				nth($shorthand, 4),
+				$important
+			);
+		} @else {
+			#{$property}: $shorthand;
+		}
+	}
+}
+
+@mixin padding($shorthand) {
+	@include convert-shorthand(padding, $shorthand);
+}
+
+@mixin margin($shorthand) {
+	@include convert-shorthand(margin, $shorthand);
+}
+
+@mixin border-radius($shorthand) {
+	@include convert-shorthand(border-radius, $shorthand);
+}

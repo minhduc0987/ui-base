@@ -1,0 +1,33 @@
+//TODO: include designToken for variables
+$color-white: #fff;
+$discount-text-color: #c92c25;
+
+$background-color-recommended: #36527e;
+$background-color-discount: #ffe0de;
+$background-color-new: #896311;
+
+.Badge {
+    position: absolute;
+    font-size: 14px;
+    font-weight: 600;
+    color: $color-white;
+    text-transform: capitalize;
+    top: 24px;
+    left: 24px;
+    border: none;
+    border-radius: 4px;
+    padding: 1.5px 8px;
+
+    &--discount {
+        background-color: $background-color-discount;
+        color: $discount-text-color;
+    }
+
+    &--new {
+        background-color: $background-color-new;
+    }
+
+    &--recommended {
+        background-color: $background-color-recommended;
+    }
+}

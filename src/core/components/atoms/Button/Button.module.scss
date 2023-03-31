@@ -1,0 +1,53 @@
+.TrButton-wrapper {
+    display: flex;
+}
+
+.TrButton {
+    --color: #011e41;
+    --background-color: #f0f0f0;
+
+    border: 2px solid var(--btn-border-color, var(--background-color));
+    position: relative;
+    display: inline-block;
+    font-size: 16px;
+    margin-bottom: 10px;
+    transition: all 0.2s;
+    border-radius: 3px;
+    text-align: center;
+    font-weight: 500;
+    line-height: 1.5;
+    padding: 9px 26px;
+    cursor: pointer;
+
+    color: var(--btn-color, var(--color));
+    background-color: var(--btn-background, var(--background-color));
+}
+
+.TrButton--primary {
+    --color-primary: #fff;
+    --background-color-primary: #011e41;
+
+    --btn-border-color: var(--background-color-primary);
+    --btn-color: var(--color-primary);
+    --btn-background: var(--background-color-primary);
+}
+
+.TrButton--secondary {
+    --color-primary: green;
+    --background-color-primary: pink;
+
+    --btn-border-color: var(--background-color-primary);
+    --btn-color: var(--color-primary);
+    --btn-background: var(--background-color-primary);
+}
+
+.TrButton--disabled {
+    pointer-events: none;
+    cursor: default;
+    --color-primary: #e0e0e1;
+    --background-color-primary: #f1f2f3;
+
+    --btn-border-color: var(--background-color-primary);
+    --btn-color: var(--color-primary);
+    --btn-background: var(--background-color-primary);
+}
