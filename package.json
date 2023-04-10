@@ -17,8 +17,8 @@
     "lint:style:fix": "./node_modules/.bin/stylelint **/*.scss --fix",
     "format": "prettier --write src/**/*.{js,jsx,ts,tsx,css,md,json} --config ./.prettierrc",
     "test": "jest",
-    "storybook": "start-storybook -p 6006 -s public",
-    "build-storybook": "build-storybook -s public",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook",
     "serve-storybook": "serve storybook-static",
     "prepare": "husky install"
   },
